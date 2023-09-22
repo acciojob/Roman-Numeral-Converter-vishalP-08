@@ -9,7 +9,22 @@ function convertToRoman(num) {
       6:['I', 1]
     };
 
-  //your code here
+  function convertToRoman(num) {
+  if (num < 1 || num > 100000) {
+    return 'Out of range';
+  }
+
+  let romanNumeral = '';
+
+  for (let i = 0; i < romanNumerals.length; i++) {
+    while (num >= romanNumerals[i].value) {
+      romanNumeral += romanNumerals[i].numeral;
+      num -= romanNumerals[i].value;
+    }
+  }
+
+  return romanNumeral;
+}
 
 }
 // You can test your code by running the above function and printing it to console by pressing the run button at the top. To run it with input 36, uncomment the following line
